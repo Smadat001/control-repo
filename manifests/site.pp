@@ -28,11 +28,4 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  file { '/tmp/hello.txt':
-    ensure  => 'file',
-    content => "Hello from Puppet!\n",
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-  }
 }
