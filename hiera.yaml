@@ -1,12 +1,12 @@
 ---
+# Hiera configuration file for Puppet
+# This file defines how Hiera will look up data based on the hierarchy and data sources.
 version: 5
 
-defaults:
-  datadir: "data"
-
 hierarchy:
-  - name: "Yaml backend"
-    data_hash: yaml_data
-    paths:
-      - "nodes/%{trusted.certname}.yaml"
-      - "common.yaml"
+  - name: "Per role"
+    path: "role/%{trusted.extensions.pp_role}.yaml"
+
+  - name: "Common"
+    path: "common.yaml"
+

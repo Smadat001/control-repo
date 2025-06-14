@@ -31,6 +31,16 @@ node default {
   if $facts['networking']['fqdn'] == 'puppet.coffeelabs.com' {
     include profile::peserver
   } else {
-    notify { 'This node is not a RedHat system, skipping peserver profile.': }
+    case $trusted['extensions']['pp_role'] {
+      'LAB': {
+        include profile::lab
+      }
+      'PROD': {
+        include profile::prod
+      }
+      default: {
+        fail("Unknown role: ${role}")
+      }
+    }
   }
 }
