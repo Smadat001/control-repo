@@ -28,7 +28,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  if $facts['fqdn'] == 'puppet.coffeelabs.com' {
+  if $facts['networking']['fqdn'] == 'puppet.coffeelabs.com' {
     include profile::peserver
   } else {
     notify { 'This node is not a RedHat system, skipping peserver profile.': }
