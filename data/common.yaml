@@ -1,2 +1,4 @@
 ---
 message: "This node is using common data"
+r10k::remote: 'https://github.com/Smadat001/control-repo.git'
+r10k::basedir: '/etc/puppetlabs/code/environments'
