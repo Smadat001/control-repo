@@ -8,6 +8,7 @@ mod 'puppetlabs-vcsrepo', '7.0.0'
 mod 'choria-mcollective', '0.14.6'
 mod 'puppet-systemd', '6.6.0'
 mod 'puppet-r10k', '14.3.0'
+mod 'puppet-catalog_diff', '4.2.0'
 #mod 'coffeelabs_packages', '0.1.0'
 
 # Modules from Git
