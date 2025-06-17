@@ -31,16 +31,18 @@ node default {
   if $facts['networking']['fqdn'] == 'puppet.coffeelabs.com' {
     include profile::peserver
   } else {
-    case $trusted['extensions']['pp_role'] {
-      'LAB': {
-        include profile::lab
+    if $trusted['extensions'] and $trusted['extensions']['pp_role'] {
+      case $trusted['extensions']['pp_role'] {
+        'LAB': {
+          include profile::lab
+        }
+        'PROD': {
+          include profile::prod
+        }
+        default: {
+          fail("Unknown role: ${trusted['extensions']['pp_role']}")
+        }
       }
-      'PROD': {
-        include profile::prod
-      }
-      default: {
-        fail("Unknown role: ${role}")
-      }
+    } else {
+      fail('Trusted fact pp_role is not set for this node.')
     }
-  }
-}
