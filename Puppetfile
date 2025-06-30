@@ -17,6 +17,6 @@ mod 'puppet-catalog_diff', '4.2.0'
 #  git:    'https://github.com/puppetlabs/puppetlabs-apache',
 #  commit: '1b6f89afdde0df7f9433a163d5c4b5328eac5779'
 
-# mod 'coffeelabs_package',
-#   git:    'https://github.com/Smadat001/coffeelabs_package',
-#   branch: 'production'
+mod 'coffeelabs_package',
+  git:    'https://github.com/Smadat001/coffeelabs_package',
+  branch: 'dev1'
