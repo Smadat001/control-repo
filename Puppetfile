@@ -19,4 +19,4 @@ mod 'puppet-catalog_diff', '4.2.0'
 
 mod 'coffeelabs_package',
   git:    'https://github.com/Smadat001/coffeelabs_package',
-  branch: 'dev1'
+  branch: 'production'
